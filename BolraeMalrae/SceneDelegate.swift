@@ -22,14 +22,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = scene
         
         let tabBarVC = UITabBarController()
-        let first = UINavigationController(rootViewController: HomeViewController())
-        let second = UINavigationController(rootViewController: SearchViewController())
-        let third = UINavigationController(rootViewController: MypageViewController())
+        let first = HomeViewController()
+        let second = SearchViewController()
+        let third = MypageViewController()
         
         first.tabBarItem = UITabBarItem(title: "홈", image: UIImage(systemName: "house"), tag: 0)
         second.tabBarItem = UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass"), tag: 1)
         third.tabBarItem = UITabBarItem(title: "마이페이지", image: UIImage(systemName: "person"), tag: 2)
         
+        tabBarVC.tabBar.tintColor = .black
+        tabBarVC.tabBar.backgroundColor = .systemGray6
         tabBarVC.setViewControllers([first, second, third], animated: true)
         
         window?.rootViewController = tabBarVC

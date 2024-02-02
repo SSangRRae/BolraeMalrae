@@ -14,6 +14,18 @@
 		EC9A24D62B6D0C9800F77D11 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24D52B6D0C9800F77D11 /* HomeViewController.swift */; };
 		EC9A24D82B6D0CAF00F77D11 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24D72B6D0CAF00F77D11 /* SearchViewController.swift */; };
 		EC9A24DA2B6D0CDF00F77D11 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24D92B6D0CDF00F77D11 /* MypageViewController.swift */; };
+		EC9A24DC2B6D0FCD00F77D11 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24DB2B6D0FCD00F77D11 /* HomeView.swift */; };
+		EC9A24DF2B6D11DA00F77D11 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EC9A24DE2B6D11DA00F77D11 /* SnapKit */; };
+		EC9A24E12B6D11DA00F77D11 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EC9A24E02B6D11DA00F77D11 /* SnapKit-Dynamic */; };
+		EC9A24E42B6D11E000F77D11 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EC9A24E32B6D11E000F77D11 /* Kingfisher */; };
+		EC9A24E72B6D11E700F77D11 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EC9A24E62B6D11E700F77D11 /* Alamofire */; };
+		EC9A24E92B6D146E00F77D11 /* TrendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24E82B6D146E00F77D11 /* TrendingTableViewCell.swift */; };
+		EC9A24EC2B6D1B9300F77D11 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EC9A24EB2B6D1B9300F77D11 /* .gitignore */; };
+		EC9A24EE2B6D1BAB00F77D11 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24ED2B6D1BAB00F77D11 /* APIKey.swift */; };
+		EC9A24F02B6D1BF900F77D11 /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24EF2B6D1BF900F77D11 /* TMDBAPIManager.swift */; };
+		EC9A24F22B6D1C5500F77D11 /* TMDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24F12B6D1C5500F77D11 /* TMDBAPI.swift */; };
+		EC9A24F42B6D1DD400F77D11 /* TrendingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24F32B6D1DD400F77D11 /* TrendingModel.swift */; };
+		EC9A24F62B6D25BC00F77D11 /* TrendingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24F52B6D25BC00F77D11 /* TrendingHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +38,14 @@
 		EC9A24D52B6D0C9800F77D11 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EC9A24D72B6D0CAF00F77D11 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		EC9A24D92B6D0CDF00F77D11 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
+		EC9A24DB2B6D0FCD00F77D11 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EC9A24E82B6D146E00F77D11 /* TrendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTableViewCell.swift; sourceTree = "<group>"; };
+		EC9A24EB2B6D1B9300F77D11 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		EC9A24ED2B6D1BAB00F77D11 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		EC9A24EF2B6D1BF900F77D11 /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
+		EC9A24F12B6D1C5500F77D11 /* TMDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPI.swift; sourceTree = "<group>"; };
+		EC9A24F32B6D1DD400F77D11 /* TrendingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingModel.swift; sourceTree = "<group>"; };
+		EC9A24F52B6D25BC00F77D11 /* TrendingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +53,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9A24E42B6D11E000F77D11 /* Kingfisher in Frameworks */,
+				EC9A24E72B6D11E700F77D11 /* Alamofire in Frameworks */,
+				EC9A24DF2B6D11DA00F77D11 /* SnapKit in Frameworks */,
+				EC9A24E12B6D11DA00F77D11 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +66,7 @@
 		EC9A24B22B6D0B4C00F77D11 = {
 			isa = PBXGroup;
 			children = (
+				EC9A24EB2B6D1B9300F77D11 /* .gitignore */,
 				EC9A24BD2B6D0B4C00F77D11 /* BolraeMalrae */,
 				EC9A24BC2B6D0B4C00F77D11 /* Products */,
 			);
@@ -58,6 +83,8 @@
 		EC9A24BD2B6D0B4C00F77D11 /* BolraeMalrae */ = {
 			isa = PBXGroup;
 			children = (
+				EC9A24ED2B6D1BAB00F77D11 /* APIKey.swift */,
+				EC9A24EA2B6D1B7A00F77D11 /* Network */,
 				EC9A24D22B6D0C5C00F77D11 /* Home */,
 				EC9A24D32B6D0C6200F77D11 /* Search */,
 				EC9A24D42B6D0C6C00F77D11 /* Mypage */,
@@ -73,7 +100,10 @@
 		EC9A24D22B6D0C5C00F77D11 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EC9A24DB2B6D0FCD00F77D11 /* HomeView.swift */,
 				EC9A24D52B6D0C9800F77D11 /* HomeViewController.swift */,
+				EC9A24F52B6D25BC00F77D11 /* TrendingHeaderView.swift */,
+				EC9A24E82B6D146E00F77D11 /* TrendingTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -94,6 +124,16 @@
 			path = Mypage;
 			sourceTree = "<group>";
 		};
+		EC9A24EA2B6D1B7A00F77D11 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EC9A24F32B6D1DD400F77D11 /* TrendingModel.swift */,
+				EC9A24F12B6D1C5500F77D11 /* TMDBAPI.swift */,
+				EC9A24EF2B6D1BF900F77D11 /* TMDBAPIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,6 +150,12 @@
 			dependencies = (
 			);
 			name = BolraeMalrae;
+			packageProductDependencies = (
+				EC9A24DE2B6D11DA00F77D11 /* SnapKit */,
+				EC9A24E02B6D11DA00F77D11 /* SnapKit-Dynamic */,
+				EC9A24E32B6D11E000F77D11 /* Kingfisher */,
+				EC9A24E62B6D11E700F77D11 /* Alamofire */,
+			);
 			productName = BolraeMalrae;
 			productReference = EC9A24BB2B6D0B4C00F77D11 /* BolraeMalrae.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +184,11 @@
 				Base,
 			);
 			mainGroup = EC9A24B22B6D0B4C00F77D11;
+			packageReferences = (
+				EC9A24DD2B6D11D900F77D11 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EC9A24E22B6D11E000F77D11 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				EC9A24E52B6D11E700F77D11 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = EC9A24BC2B6D0B4C00F77D11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -153,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC9A24CB2B6D0B4E00F77D11 /* LaunchScreen.storyboard in Resources */,
+				EC9A24EC2B6D1B9300F77D11 /* .gitignore in Resources */,
 				EC9A24C82B6D0B4E00F77D11 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,8 +218,15 @@
 			files = (
 				EC9A24DA2B6D0CDF00F77D11 /* MypageViewController.swift in Sources */,
 				EC9A24BF2B6D0B4C00F77D11 /* AppDelegate.swift in Sources */,
+				EC9A24EE2B6D1BAB00F77D11 /* APIKey.swift in Sources */,
+				EC9A24F42B6D1DD400F77D11 /* TrendingModel.swift in Sources */,
+				EC9A24F22B6D1C5500F77D11 /* TMDBAPI.swift in Sources */,
 				EC9A24C12B6D0B4C00F77D11 /* SceneDelegate.swift in Sources */,
+				EC9A24F02B6D1BF900F77D11 /* TMDBAPIManager.swift in Sources */,
+				EC9A24E92B6D146E00F77D11 /* TrendingTableViewCell.swift in Sources */,
+				EC9A24DC2B6D0FCD00F77D11 /* HomeView.swift in Sources */,
 				EC9A24D82B6D0CAF00F77D11 /* SearchViewController.swift in Sources */,
+				EC9A24F62B6D25BC00F77D11 /* TrendingHeaderView.swift in Sources */,
 				EC9A24D62B6D0C9800F77D11 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +450,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC9A24DD2B6D11D900F77D11 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+		EC9A24E22B6D11E000F77D11 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
+		EC9A24E52B6D11E700F77D11 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC9A24DE2B6D11DA00F77D11 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC9A24DD2B6D11D900F77D11 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		EC9A24E02B6D11DA00F77D11 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC9A24DD2B6D11D900F77D11 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		EC9A24E32B6D11E000F77D11 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC9A24E22B6D11E000F77D11 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		EC9A24E62B6D11E700F77D11 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC9A24E52B6D11E700F77D11 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EC9A24B32B6D0B4C00F77D11 /* Project object */;
 }
