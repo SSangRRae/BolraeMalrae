@@ -13,11 +13,11 @@ class TMDBAPIManager {
     
     private init() { }
     
-    func fetchTrendingTVShows(api: TMDBAPI, completionHandler: @escaping ([Trending]) -> Void) {
+    func fetchTVShows(api: TMDBAPI, completionHandler: @escaping ([TV]) -> Void) {
         AF.request(api.endpoint,
                    parameters: api.parameter,
                    encoding: URLEncoding(destination: .queryString),
-                   headers: api.header).responseDecodable(of: TrendingModel.self) { response in
+                   headers: api.header).responseDecodable(of: TVModel.self) { response in
             switch response.result {
             case .success(let success):
                 completionHandler(success.results)

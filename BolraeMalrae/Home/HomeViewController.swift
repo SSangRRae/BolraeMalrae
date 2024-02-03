@@ -10,9 +10,6 @@ import UIKit
 class HomeViewController: UIViewController {
     let homeView = HomeView()
     
-    var allTrendingList: [Trending] = []
-    var top5TrendingList: [Trending] = []
-    
     override func loadView() {
         self.view = homeView
     }
@@ -22,55 +19,94 @@ class HomeViewController: UIViewController {
         
         homeView.tableView.delegate = self
         homeView.tableView.dataSource = self
+        homeView.tableView.separatorStyle = .none
         homeView.tableView.register(TrendingTableViewCell.self, forCellReuseIdentifier: "Trending")
+        homeView.tableView.register(TopratedTableViewCell.self, forCellReuseIdentifier: "Top")
         
-        let group = DispatchGroup()
-        
-        group.enter()
-        TMDBAPIManager.shared.fetchTrendingTVShows(api: .trending) { result in
-            self.allTrendingList = result
-            group.leave()
-        }
-        
-        group.notify(queue: .main) {
-            for i in 0...4 {
-                self.top5TrendingList.append(self.allTrendingList[i])
-            }
-            self.homeView.tableView.reloadData()
-        }
+        requestToTMDB()
     }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return HomeSection.allCases.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return top5TrendingList.count
+        return HomeSection.allCases[section].numberOfRows
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return HomeSection.allCases[indexPath.section].heightRow
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = homeView.tableView.dequeueReusableCell(withIdentifier: "Trending") as! TrendingTableViewCell
-        
-        cell.configureView(item: top5TrendingList[indexPath.row], index: indexPath.row)
-        
-        return cell
+        if indexPath.section == 0 {
+            let cell = homeView.tableView.dequeueReusableCell(withIdentifier: "Trending") as! TrendingTableViewCell
+            cell.selectionStyle = .none
+            cell.configureView(item: HomeSection.list[indexPath.section][indexPath.row], index: indexPath.row)
+            return cell
+        } else {
+            let cell = homeView.tableView.dequeueReusableCell(withIdentifier: "Top") as! TopratedTableViewCell
+            cell.selectionStyle = .none
+            cell.collectionView.dataSource = self
+            cell.collectionView.delegate = self
+            cell.collectionView.register(TopratedCollectionViewCell.self, forCellWithReuseIdentifier: "TopCollection")
+            cell.collectionView.reloadData()
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 35
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let trendingHeader = TrendingHeaderView()
-        trendingHeader.button.addTarget(self, action: #selector(trendingClicked), for: .touchUpInside)
-        return trendingHeader
+        let header = HeaderView()
+        header.leftButton.setTitle(HomeSection.allCases[section].sectionHeaderTitle, for: .normal)
+        header.leftButton.addTarget(self, action: #selector(headerClicked), for: .touchUpInside)
+        header.leftButton.tag = section
+        header.rightButton.addTarget(self, action: #selector(headerClicked), for: .touchUpInside)
+        header.rightButton.tag = section
+        return header
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return HomeSection.list[1].count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCollection", for: indexPath) as! TopratedCollectionViewCell
+        
+        cell.configureView(item: HomeSection.list[1][indexPath.item])
+        
+        return cell
     }
 }
 
 extension HomeViewController {
-    @objc func trendingClicked() {
-        print("ddd")
+    func requestToTMDB() {
+        let group = DispatchGroup()
+        
+        group.enter()
+        TMDBAPIManager.shared.fetchTVShows(api: .trending) { result in
+            HomeSection.allTrendingList = result
+            group.leave()
+        }
+        group.enter()
+        TMDBAPIManager.shared.fetchTVShows(api: .topRated) { result in
+            HomeSection.list[1] = result
+            group.leave()
+        }
+        
+        group.notify(queue: .main) {
+            HomeSection.top5Trending()
+            self.homeView.tableView.reloadData()
+        }
+    }
+    @objc func headerClicked(_ sender: UIButton) {
+        print(sender.tag)
     }
 }

@@ -48,7 +48,7 @@ extension TrendingTableViewCell {
         contentView.addSubview(title)
     }
     
-    func configureView(item: Trending, index: Int) {
+    func configureView(item: TV, index: Int) {
         rankLabel.text = "\(index + 1)"
         posterImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(item.poster)"))
         title.text = item.name

@@ -7,12 +7,12 @@
 
 import UIKit
 
-struct TrendingModel: Decodable {
+struct TVModel: Decodable {
     let page: Int
-    let results: [Trending]
+    let results: [TV]
 }
 
-struct Trending: Decodable {
+struct TV: Decodable {
     let id: Int
     let name: String
     let overview: String

@@ -18,7 +18,6 @@ class HomeView: UIView {
     let tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .grouped)
         view.backgroundColor = .clear
-        view.rowHeight = 50
         return view
     }()
     
@@ -51,7 +50,7 @@ class HomeView: UIView {
             make.height.equalTo(50)
         }
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom)
+            make.top.equalTo(logoImageView.snp.bottom).offset(16)
             make.bottom.horizontalEdges.equalTo(safeAreaLayoutGuide)
         }
     }
