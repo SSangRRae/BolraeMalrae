@@ -11,7 +11,7 @@ import SnapKit
 class TrendingHeaderView: UIView {
     let button: UIButton = {
         let view = UIButton()
-        view.setTitle("유행하는 TV쇼 >", for: .normal)
+        view.setTitle("트렌드 따라갈래 >", for: .normal)
         view.setTitleColor(.black, for: .normal)
         view.titleLabel?.font = .boldSystemFont(ofSize: 20)
         return view

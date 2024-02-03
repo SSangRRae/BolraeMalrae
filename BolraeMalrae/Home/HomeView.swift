@@ -45,7 +45,8 @@ class HomeView: UIView {
     
     func configureConstraints() {
         logoImageView.snp.makeConstraints { make in
-            make.top.leading.equalTo(safeAreaLayoutGuide).inset(8)
+            make.top.equalTo(safeAreaLayoutGuide).inset(8)
+            make.centerX.equalTo(safeAreaLayoutGuide)
             make.width.equalTo(150)
             make.height.equalTo(50)
         }
