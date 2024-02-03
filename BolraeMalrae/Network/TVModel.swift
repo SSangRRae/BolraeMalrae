@@ -16,8 +16,8 @@ struct TV: Decodable {
     let id: Int
     let name: String
     let overview: String
-    let backdrop: String
-    let poster: String
+    let backdrop: String?
+    let poster: String?
     
     enum CodingKeys: String, CodingKey {
         case id

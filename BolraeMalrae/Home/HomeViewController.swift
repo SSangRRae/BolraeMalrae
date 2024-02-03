@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
         homeView.tableView.dataSource = self
         homeView.tableView.separatorStyle = .none
         homeView.tableView.register(TrendingTableViewCell.self, forCellReuseIdentifier: "Trending")
-        homeView.tableView.register(TopratedTableViewCell.self, forCellReuseIdentifier: "Top")
+        homeView.tableView.register(TopAndPopularTableViewCell.self, forCellReuseIdentifier: "Top")
         
         requestToTMDB()
     }
@@ -47,12 +47,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configureView(item: HomeSection.list[indexPath.section][indexPath.row], index: indexPath.row)
             return cell
         } else {
-            let cell = homeView.tableView.dequeueReusableCell(withIdentifier: "Top") as! TopratedTableViewCell
+            let cell = homeView.tableView.dequeueReusableCell(withIdentifier: "Top") as! TopAndPopularTableViewCell
             cell.selectionStyle = .none
             cell.collectionView.dataSource = self
             cell.collectionView.delegate = self
-            cell.collectionView.register(TopratedCollectionViewCell.self, forCellWithReuseIdentifier: "TopCollection")
+            cell.collectionView.register(TopAndPopularCollectionViewCell.self, forCellWithReuseIdentifier: "collection")
             cell.collectionView.reloadData()
+            cell.collectionView.tag = indexPath.section
             return cell
         }
     }
@@ -74,13 +75,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return HomeSection.list[1].count
+        if collectionView.tag == 1 { return HomeSection.list[1].count }
+        else { return HomeSection.list[2].count }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCollection", for: indexPath) as! TopratedCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collection", for: indexPath) as! TopAndPopularCollectionViewCell
         
-        cell.configureView(item: HomeSection.list[1][indexPath.item])
+        if collectionView.tag == 1 { cell.configureView(item: HomeSection.list[1][indexPath.item]) }
+        else { cell.configureView(item: HomeSection.list[2][indexPath.item]) }
         
         return cell
     }
@@ -100,7 +103,11 @@ extension HomeViewController {
             HomeSection.list[1] = result
             group.leave()
         }
-        
+        group.enter()
+        TMDBAPIManager.shared.fetchTVShows(api: .popular) { result in
+            HomeSection.list[2] = result
+            group.leave()
+        }
         group.notify(queue: .main) {
             HomeSection.top5Trending()
             self.homeView.tableView.reloadData()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopratedTableViewCell: UITableViewCell {
+class TopAndPopularTableViewCell: UITableViewCell {
     let collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: configureCollectionViewLayout())
         return view
@@ -27,7 +27,7 @@ class TopratedTableViewCell: UITableViewCell {
     }
 }
 
-extension TopratedTableViewCell {
+extension TopAndPopularTableViewCell {
     static func configureCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         

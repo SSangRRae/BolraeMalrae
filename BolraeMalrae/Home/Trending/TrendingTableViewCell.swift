@@ -50,7 +50,13 @@ extension TrendingTableViewCell {
     
     func configureView(item: TV, index: Int) {
         rankLabel.text = "\(index + 1)"
-        posterImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(item.poster)"))
+        if let poster = item.poster {
+            posterImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(poster)"))
+        } else {
+            posterImage.layer.borderColor = UIColor.black.cgColor
+            posterImage.layer.borderWidth = 1
+            posterImage.image = UIImage(systemName: "xmark")
+        }
         title.text = item.name
     }
     

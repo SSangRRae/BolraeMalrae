@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopratedCollectionViewCell: UICollectionViewCell {
+class TopAndPopularCollectionViewCell: UICollectionViewCell {
     let posterImage: UIImageView = {
         let view = UIImageView()
         return view
@@ -32,14 +32,21 @@ class TopratedCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension TopratedCollectionViewCell {
+extension TopAndPopularCollectionViewCell {
     func configureHierarchy() {
         contentView.addSubview(posterImage)
         contentView.addSubview(title)
     }
     
     func configureView(item: TV) {
-        posterImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(item.poster)"))
+        if let poster = item.poster {
+            posterImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(poster)"))
+        } else {
+            posterImage.layer.borderColor = UIColor.black.cgColor
+            posterImage.layer.borderWidth = 1
+            posterImage.image = UIImage(systemName: "xmark")
+            posterImage.tintColor = .black
+        }
         title.text = item.name
     }
 

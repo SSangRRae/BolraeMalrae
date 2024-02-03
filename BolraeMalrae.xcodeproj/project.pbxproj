@@ -26,8 +26,8 @@
 		EC9A24F22B6D1C5500F77D11 /* TMDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24F12B6D1C5500F77D11 /* TMDBAPI.swift */; };
 		EC9A24F42B6D1DD400F77D11 /* TVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24F32B6D1DD400F77D11 /* TVModel.swift */; };
 		EC9A24F62B6D25BC00F77D11 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24F52B6D25BC00F77D11 /* HeaderView.swift */; };
-		EC9A24F82B6E01AE00F77D11 /* TopratedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24F72B6E01AE00F77D11 /* TopratedTableViewCell.swift */; };
-		EC9A24FC2B6E043900F77D11 /* TopratedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24FB2B6E043900F77D11 /* TopratedCollectionViewCell.swift */; };
+		EC9A24F82B6E01AE00F77D11 /* TopAndPopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24F72B6E01AE00F77D11 /* TopAndPopularTableViewCell.swift */; };
+		EC9A24FC2B6E043900F77D11 /* TopAndPopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24FB2B6E043900F77D11 /* TopAndPopularCollectionViewCell.swift */; };
 		EC9A25012B6E113F00F77D11 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A25002B6E113F00F77D11 /* HomeSection.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,8 +49,8 @@
 		EC9A24F12B6D1C5500F77D11 /* TMDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPI.swift; sourceTree = "<group>"; };
 		EC9A24F32B6D1DD400F77D11 /* TVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVModel.swift; sourceTree = "<group>"; };
 		EC9A24F52B6D25BC00F77D11 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		EC9A24F72B6E01AE00F77D11 /* TopratedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopratedTableViewCell.swift; sourceTree = "<group>"; };
-		EC9A24FB2B6E043900F77D11 /* TopratedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopratedCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC9A24F72B6E01AE00F77D11 /* TopAndPopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAndPopularTableViewCell.swift; sourceTree = "<group>"; };
+		EC9A24FB2B6E043900F77D11 /* TopAndPopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAndPopularCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC9A25002B6E113F00F77D11 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,7 +112,7 @@
 				EC9A24DB2B6D0FCD00F77D11 /* HomeView.swift */,
 				EC9A24D52B6D0C9800F77D11 /* HomeViewController.swift */,
 				EC9A24F92B6E033700F77D11 /* Trending */,
-				EC9A24FA2B6E034B00F77D11 /* Toprated */,
+				EC9A24FA2B6E034B00F77D11 /* TopAndPopular */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -151,13 +151,13 @@
 			path = Trending;
 			sourceTree = "<group>";
 		};
-		EC9A24FA2B6E034B00F77D11 /* Toprated */ = {
+		EC9A24FA2B6E034B00F77D11 /* TopAndPopular */ = {
 			isa = PBXGroup;
 			children = (
-				EC9A24F72B6E01AE00F77D11 /* TopratedTableViewCell.swift */,
-				EC9A24FB2B6E043900F77D11 /* TopratedCollectionViewCell.swift */,
+				EC9A24F72B6E01AE00F77D11 /* TopAndPopularTableViewCell.swift */,
+				EC9A24FB2B6E043900F77D11 /* TopAndPopularCollectionViewCell.swift */,
 			);
-			path = Toprated;
+			path = TopAndPopular;
 			sourceTree = "<group>";
 		};
 		EC9A24FD2B6E047000F77D11 /* Custom */ = {
@@ -249,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC9A24F82B6E01AE00F77D11 /* TopratedTableViewCell.swift in Sources */,
+				EC9A24F82B6E01AE00F77D11 /* TopAndPopularTableViewCell.swift in Sources */,
 				EC9A24DA2B6D0CDF00F77D11 /* MypageViewController.swift in Sources */,
 				EC9A24BF2B6D0B4C00F77D11 /* AppDelegate.swift in Sources */,
 				EC9A24EE2B6D1BAB00F77D11 /* APIKey.swift in Sources */,
@@ -259,7 +259,7 @@
 				EC9A24F02B6D1BF900F77D11 /* TMDBAPIManager.swift in Sources */,
 				EC9A24E92B6D146E00F77D11 /* TrendingTableViewCell.swift in Sources */,
 				EC9A24DC2B6D0FCD00F77D11 /* HomeView.swift in Sources */,
-				EC9A24FC2B6E043900F77D11 /* TopratedCollectionViewCell.swift in Sources */,
+				EC9A24FC2B6E043900F77D11 /* TopAndPopularCollectionViewCell.swift in Sources */,
 				EC9A25012B6E113F00F77D11 /* HomeSection.swift in Sources */,
 				EC9A24D82B6D0CAF00F77D11 /* SearchViewController.swift in Sources */,
 				EC9A24F62B6D25BC00F77D11 /* HeaderView.swift in Sources */,
