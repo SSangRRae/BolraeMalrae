@@ -114,6 +114,10 @@ extension HomeViewController {
         }
     }
     @objc func headerClicked(_ sender: UIButton) {
-        print(sender.tag)
+        if sender.tag == 0 {
+            print(sender.tag)
+            let vc = TrendingViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

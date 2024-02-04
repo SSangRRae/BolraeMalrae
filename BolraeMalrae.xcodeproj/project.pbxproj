@@ -29,6 +29,7 @@
 		EC9A24F82B6E01AE00F77D11 /* TopAndPopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24F72B6E01AE00F77D11 /* TopAndPopularTableViewCell.swift */; };
 		EC9A24FC2B6E043900F77D11 /* TopAndPopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A24FB2B6E043900F77D11 /* TopAndPopularCollectionViewCell.swift */; };
 		EC9A25012B6E113F00F77D11 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A25002B6E113F00F77D11 /* HomeSection.swift */; };
+		EC9A25032B6FA5A400F77D11 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A25022B6FA5A400F77D11 /* TrendingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		EC9A24F72B6E01AE00F77D11 /* TopAndPopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAndPopularTableViewCell.swift; sourceTree = "<group>"; };
 		EC9A24FB2B6E043900F77D11 /* TopAndPopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAndPopularCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC9A25002B6E113F00F77D11 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
+		EC9A25022B6FA5A400F77D11 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				EC9A24E82B6D146E00F77D11 /* TrendingTableViewCell.swift */,
+				EC9A25022B6FA5A400F77D11 /* TrendingViewController.swift */,
 			);
 			path = Trending;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC9A24F82B6E01AE00F77D11 /* TopAndPopularTableViewCell.swift in Sources */,
+				EC9A25032B6FA5A400F77D11 /* TrendingViewController.swift in Sources */,
 				EC9A24DA2B6D0CDF00F77D11 /* MypageViewController.swift in Sources */,
 				EC9A24BF2B6D0B4C00F77D11 /* AppDelegate.swift in Sources */,
 				EC9A24EE2B6D1BAB00F77D11 /* APIKey.swift in Sources */,

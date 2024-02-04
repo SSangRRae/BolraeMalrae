@@ -22,9 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = scene
         
         let tabBarVC = UITabBarController()
-        let first = HomeViewController()
-        let second = SearchViewController()
-        let third = MypageViewController()
+        let first = UINavigationController(rootViewController: HomeViewController())
+        let second = UINavigationController(rootViewController: SearchViewController())
+        let third = UINavigationController(rootViewController: MypageViewController())
         
         first.tabBarItem = UITabBarItem(title: "홈", image: UIImage(systemName: "house"), tag: 0)
         second.tabBarItem = UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass"), tag: 1)
