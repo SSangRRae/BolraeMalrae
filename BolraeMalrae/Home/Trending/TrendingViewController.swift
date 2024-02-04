@@ -27,6 +27,11 @@ class TrendingViewController: UIViewController {
         configureViews()
         configureConstraints()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
 }
 
 extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
@@ -38,6 +43,12 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Trending", for: indexPath) as! TrendingTableViewCell
         cell.configureView(item: HomeSection.allTrendingList[indexPath.row], index: indexPath.row)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.tvShow = HomeSection.allTrendingList[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -17,7 +17,7 @@ enum HomeSection: CaseIterable {
     
     var heightRow: CGFloat {
         switch self {
-        case .trending: 50
+        case .trending: 60
         case .topRated, .popular: 250
         }
     }

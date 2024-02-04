@@ -12,6 +12,7 @@ enum TMDBAPI {
     case trending
     case topRated
     case popular
+    case cast(id: Int)
     
     var baseURL: String {
         return "https://api.themoviedb.org/3/"
@@ -22,6 +23,7 @@ enum TMDBAPI {
         case .trending: URL(string: baseURL + "trending/tv/week")!
         case .topRated: URL(string: baseURL + "tv/top_rated")!
         case .popular: URL(string: baseURL + "tv/popular")!
+        case .cast(let id): URL(string: baseURL + "tv/\(id)/aggregate_credits")!
         }
     }
     
@@ -31,7 +33,7 @@ enum TMDBAPI {
     
     var parameter: Parameters {
         switch self {
-        case .trending, .topRated, .popular: ["language": "ko-KR"]
+        case .trending, .topRated, .popular, .cast: ["language": "ko-KR"]
         }
     }
 }

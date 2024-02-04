@@ -26,4 +26,18 @@ class TMDBAPIManager {
             }
         }
     }
+    
+    func fetchTVShowCasts(api: TMDBAPI, completionHandler: @escaping ([Cast]) -> Void) {
+        AF.request(api.endpoint,
+                   parameters: api.parameter,
+                   encoding: URLEncoding(destination: .queryString),
+                   headers: api.header).responseDecodable(of: CastModel.self) { response in
+            switch response.result {
+            case .success(let success):
+                completionHandler(success.cast)
+            case .failure(let failure):
+                print(failure)
+            }
+        }
+    }
 }

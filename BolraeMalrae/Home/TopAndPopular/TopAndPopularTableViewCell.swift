@@ -18,7 +18,9 @@ class TopAndPopularTableViewCell: UITableViewCell {
         
         contentView.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
-            make.edges.equalTo(contentView)
+            make.verticalEdges.equalTo(contentView).inset(8)
+            make.height.equalTo(250)
+            make.horizontalEdges.equalTo(contentView)
         }
     }
     

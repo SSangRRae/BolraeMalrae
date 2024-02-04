@@ -25,6 +25,12 @@ class HomeViewController: UIViewController {
         
         requestToTMDB()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = true
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -34,10 +40,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return HomeSection.allCases[section].numberOfRows
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return HomeSection.allCases[indexPath.section].heightRow
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,21 +73,29 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         header.rightButton.tag = section
         return header
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.tvShow = HomeSection.list[indexPath.section][indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView.tag == 1 { return HomeSection.list[1].count }
-        else { return HomeSection.list[2].count }
+        return HomeSection.list[collectionView.tag].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collection", for: indexPath) as! TopAndPopularCollectionViewCell
-        
-        if collectionView.tag == 1 { cell.configureView(item: HomeSection.list[1][indexPath.item]) }
-        else { cell.configureView(item: HomeSection.list[2][indexPath.item]) }
-        
+        cell.configureView(item: HomeSection.list[collectionView.tag][indexPath.item])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.tvShow = HomeSection.list[collectionView.tag][indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

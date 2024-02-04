@@ -69,8 +69,9 @@ extension TrendingTableViewCell {
         posterImage.snp.makeConstraints { make in
             make.centerY.equalTo(contentView)
             make.leading.equalTo(rankLabel.snp.trailing).offset(16)
-            make.width.equalTo(30)
-            make.height.equalTo(40)
+            make.width.equalTo(40)
+            make.height.equalTo(50)
+            make.verticalEdges.equalTo(contentView).inset(8)
         }
         title.snp.makeConstraints { make in
             make.centerY.equalTo(contentView)
