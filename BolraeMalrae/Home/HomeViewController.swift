@@ -104,18 +104,36 @@ extension HomeViewController {
         let group = DispatchGroup()
         
         group.enter()
-        TMDBAPIManager.shared.fetchTVShows(api: .trending) { result in
-            HomeSection.allTrendingList = result
+        TMDBSessionManager.shared.fetchTrendingTVShows(api: .trending) { result, error in
+            if let error = error {
+                print(error.rawValue)
+            } else {
+                if let result = result {
+                    HomeSection.allTrendingList = result.results
+                }
+            }
             group.leave()
         }
         group.enter()
-        TMDBAPIManager.shared.fetchTVShows(api: .topRated) { result in
-            HomeSection.list[1] = result
+        TMDBSessionManager.shared.fetchTrendingTVShows(api: .topRated) { result, error in
+            if let error = error {
+                print(error.rawValue)
+            } else {
+                if let result = result {
+                    HomeSection.list[1] = result.results
+                }
+            }
             group.leave()
         }
         group.enter()
-        TMDBAPIManager.shared.fetchTVShows(api: .popular) { result in
-            HomeSection.list[2] = result
+        TMDBSessionManager.shared.fetchTrendingTVShows(api: .popular) { result, error in
+            if let error = error {
+                print(error.rawValue)
+            } else {
+                if let result = result {
+                    HomeSection.list[2] = result.results
+                }
+            }
             group.leave()
         }
         group.notify(queue: .main) {

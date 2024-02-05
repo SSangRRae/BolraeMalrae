@@ -36,6 +36,7 @@
 		EC9A250E2B6FBBF000F77D11 /* DetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A250D2B6FBBF000F77D11 /* DetailSection.swift */; };
 		EC9A25102B6FC03900F77D11 /* CastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A250F2B6FC03900F77D11 /* CastModel.swift */; };
 		EC9A25122B6FC14500F77D11 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A25112B6FC14500F77D11 /* CastTableViewCell.swift */; };
+		EC9A25362B70C42D00F77D11 /* TMDBSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A25352B70C42D00F77D11 /* TMDBSessionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		EC9A250D2B6FBBF000F77D11 /* DetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSection.swift; sourceTree = "<group>"; };
 		EC9A250F2B6FC03900F77D11 /* CastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastModel.swift; sourceTree = "<group>"; };
 		EC9A25112B6FC14500F77D11 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
+		EC9A25352B70C42D00F77D11 /* TMDBSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBSessionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				EC9A250F2B6FC03900F77D11 /* CastModel.swift */,
 				EC9A24F12B6D1C5500F77D11 /* TMDBAPI.swift */,
 				EC9A24EF2B6D1BF900F77D11 /* TMDBAPIManager.swift */,
+				EC9A25352B70C42D00F77D11 /* TMDBSessionManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9A25362B70C42D00F77D11 /* TMDBSessionManager.swift in Sources */,
 				EC9A24F82B6E01AE00F77D11 /* TopAndPopularTableViewCell.swift in Sources */,
 				EC9A25082B6FAFE800F77D11 /* DetailView.swift in Sources */,
 				EC9A25062B6FAB9A00F77D11 /* DetailViewController.swift in Sources */,

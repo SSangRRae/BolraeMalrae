@@ -52,11 +52,11 @@ class CastTableViewCell: UITableViewCell {
     
     func configureConstraints() {
         profileImage.snp.makeConstraints { make in
-            make.centerY.equalTo(contentView)
             make.leading.equalTo(contentView).offset(16)
             make.width.equalTo(50)
             make.height.equalTo(60)
-            make.verticalEdges.equalTo(contentView).inset(8)
+            make.top.equalTo(contentView.snp.top).offset(8)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-8)
         }
         
         nameLabel.snp.makeConstraints { make in
