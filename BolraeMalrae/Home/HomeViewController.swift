@@ -66,10 +66,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = HeaderView()
+        if section == 0 {
+            header.leftButton.addTarget(self, action: #selector(headerClicked), for: .touchUpInside)
+            header.rightButton.addTarget(self, action: #selector(headerClicked), for: .touchUpInside)
+        } else {
+            header.rightButton.isHidden = true
+        }
         header.leftButton.setTitle(HomeSection.allCases[section].sectionHeaderTitle, for: .normal)
-        header.leftButton.addTarget(self, action: #selector(headerClicked), for: .touchUpInside)
         header.leftButton.tag = section
-        header.rightButton.addTarget(self, action: #selector(headerClicked), for: .touchUpInside)
         header.rightButton.tag = section
         return header
     }

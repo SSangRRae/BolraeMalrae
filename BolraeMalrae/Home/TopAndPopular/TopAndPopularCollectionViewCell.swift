@@ -8,10 +8,7 @@
 import UIKit
 
 class TopAndPopularCollectionViewCell: UICollectionViewCell {
-    let posterImage: UIImageView = {
-        let view = UIImageView()
-        return view
-    }()
+    let posterImage = PosterImageView(frame: .zero)
     
     let title: UILabel = {
         let view = UILabel()
@@ -39,14 +36,7 @@ extension TopAndPopularCollectionViewCell {
     }
     
     func configureView(item: TV) {
-        if let poster = item.poster {
-            posterImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(poster)"))
-        } else {
-            posterImage.layer.borderColor = UIColor.black.cgColor
-            posterImage.layer.borderWidth = 1
-            posterImage.image = UIImage(systemName: "xmark")
-            posterImage.tintColor = .black
-        }
+        posterImage.configureImage(poster: item.poster)
         title.text = item.name
     }
 

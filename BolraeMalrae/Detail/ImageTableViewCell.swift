@@ -1,13 +1,13 @@
 //
-//  DetailView.swift
+//  ImageTableViewCell.swift
 //  BolraeMalrae
 //
-//  Created by SangRae Kim on 2/4/24.
+//  Created by SangRae Kim on 2/5/24.
 //
 
 import UIKit
 
-class DetailView: UIView {
+class ImageTableViewCell: UITableViewCell {
     let backdropImage: UIImageView = {
         let view = UIImageView()
         view.alpha = 0.3
@@ -26,57 +26,46 @@ class DetailView: UIView {
         view.font = .systemFont(ofSize: 12)
         return view
     }()
-    let posterImage: UIImageView = {
-        let view = UIImageView()
-        return view
-    }()
-    let tableView: UITableView = {
-        let view = UITableView(frame: .zero, style: .grouped)
-        view.backgroundColor = .clear        
-        return view
-    }()
+    let posterImage = PosterImageView(frame: .zero)
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = .white
         configureHierarchy()
         configureConstraints()
     }
     
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
-extension DetailView {
+extension ImageTableViewCell {
     func configureHierarchy() {
-        addSubview(backdropImage)
-        addSubview(titleLabel)
-        addSubview(originLabel)
-        addSubview(posterImage)
-        addSubview(tableView)
+        contentView.addSubview(backdropImage)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(originLabel)
+        contentView.addSubview(posterImage)
     }
     
     func configureView(item: TV) {
         if let backdrop = item.backdrop {
             backdropImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(backdrop)"))
         } else {
+            backdropImage.layer.borderColor = UIColor.black.cgColor
+            backdropImage.layer.borderWidth = 1
             backdropImage.image = UIImage(systemName: "xmark")
+            backdropImage.tintColor = .black
         }
-        if let poster = item.poster {
-            posterImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(poster)"))
-        } else {
-            posterImage.image = UIImage(systemName: "xmark")
-        }
+        posterImage.configureImage(poster: item.poster)
         titleLabel.text = item.name
         originLabel.text = item.originalName
     }
 
     func configureConstraints() {
         backdropImage.snp.makeConstraints { make in
-            make.top.horizontalEdges.equalTo(safeAreaLayoutGuide)
             make.height.equalTo(270)
+            make.edges.equalTo(contentView)
         }
         posterImage.snp.makeConstraints { make in
             make.trailing.equalTo(backdropImage.snp.trailing).inset(16)
@@ -93,10 +82,6 @@ extension DetailView {
             make.top.equalTo(titleLabel.snp.bottom).offset(8)
             make.leading.equalTo(titleLabel.snp.leading)
             make.width.equalTo(200)
-        }
-        tableView.snp.makeConstraints { make in
-            make.top.equalTo(backdropImage.snp.bottom)
-            make.horizontalEdges.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
 }

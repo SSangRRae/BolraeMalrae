@@ -8,8 +8,7 @@
 import UIKit
 
 class CastTableViewCell: UITableViewCell {
-    
-    let profileImage = UIImageView()
+    let profileImage = PosterImageView(frame: .zero)
     let nameLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black
@@ -40,12 +39,7 @@ class CastTableViewCell: UITableViewCell {
     }
     
     func configureViews(item: Cast) {
-        if let profile = item.profile {
-            profileImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(profile)"))
-        } else {
-            profileImage.image = UIImage(systemName: "xmark")
-        }
-        
+        profileImage.configureImage(poster: item.profile)
         nameLabel.text = item.name
         roleLabel.text = item.roles[0].character
     }

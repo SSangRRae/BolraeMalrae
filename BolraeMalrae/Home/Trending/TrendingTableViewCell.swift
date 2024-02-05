@@ -17,11 +17,7 @@ class TrendingTableViewCell: UITableViewCell {
         view.textAlignment = .center
         return view
     }()
-    let posterImage: UIImageView = {
-        let view = UIImageView()
-        view.contentMode = .scaleToFill
-        return view
-    }()
+    let posterImage = PosterImageView(frame: .zero)
     let title: UILabel = {
         let view = UILabel()
         view.textColor = .black
@@ -50,13 +46,7 @@ extension TrendingTableViewCell {
     
     func configureView(item: TV, index: Int) {
         rankLabel.text = "\(index + 1)"
-        if let poster = item.poster {
-            posterImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(poster)"))
-        } else {
-            posterImage.layer.borderColor = UIColor.black.cgColor
-            posterImage.layer.borderWidth = 1
-            posterImage.image = UIImage(systemName: "xmark")
-        }
+        posterImage.configureImage(poster: item.poster)
         title.text = item.name
     }
     

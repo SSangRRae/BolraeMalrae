@@ -19,9 +19,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailView.configureView(item: tvShow)
         detailView.tableView.delegate = self
         detailView.tableView.dataSource = self
+        detailView.tableView.register(ImageTableViewCell.self, forCellReuseIdentifier: "image")
         detailView.tableView.register(OverviewTableViewCell.self, forCellReuseIdentifier: "overview")
         detailView.tableView.register(CastTableViewCell.self, forCellReuseIdentifier: "cast")
         
@@ -48,13 +48,21 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "image", for: indexPath) as! ImageTableViewCell
+            cell.configureView(item: tvShow)
+            cell.selectionStyle = .none
+            return cell
+        }
+        else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "overview", for: indexPath) as! OverviewTableViewCell
             cell.textView.text = tvShow.overview
+            cell.selectionStyle = .none
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cast", for: indexPath) as! CastTableViewCell
             cell.configureViews(item: DetailSection.castList[indexPath.row])
+            cell.selectionStyle = .none
             return cell
         }
     }

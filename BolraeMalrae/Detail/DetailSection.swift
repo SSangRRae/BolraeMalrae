@@ -8,13 +8,15 @@
 import Foundation
 
 enum DetailSection: CaseIterable {
+    case image
     case overview
     case cast
     
     static var castList: [Cast] = []
     
-    var sectionHeaderTitle: String {
+    var sectionHeaderTitle: String? {
         switch self {
+        case .image: nil
         case .overview: "Overview"
         case .cast: "Cast"
         }
@@ -22,7 +24,7 @@ enum DetailSection: CaseIterable {
     
     var numberOfRows: Int {
         switch self {
-        case .overview: 1
+        case .image, .overview: 1
         case .cast: DetailSection.castList.count
         }
     }
