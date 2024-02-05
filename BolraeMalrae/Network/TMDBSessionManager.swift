@@ -7,13 +7,6 @@
 
 import UIKit
 
-enum TMDBError: String, Error {
-    case failedRequest
-    case noData
-    case invalidResponse
-    case failedDecoding
-}
-
 class TMDBSessionManager {
     static let shared = TMDBSessionManager()
     

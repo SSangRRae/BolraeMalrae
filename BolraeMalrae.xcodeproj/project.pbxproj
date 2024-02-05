@@ -40,6 +40,7 @@
 		EC9A25382B70EADE00F77D11 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A25372B70EADE00F77D11 /* SearchCollectionViewCell.swift */; };
 		EC9A253A2B70EF9500F77D11 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A25392B70EF9500F77D11 /* ImageTableViewCell.swift */; };
 		EC9A253C2B70F3C600F77D11 /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A253B2B70F3C600F77D11 /* PosterImageView.swift */; };
+		EC9A253E2B70F7D900F77D11 /* TMDBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A253D2B70F7D900F77D11 /* TMDBError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		EC9A25372B70EADE00F77D11 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC9A25392B70EF9500F77D11 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		EC9A253B2B70F3C600F77D11 /* PosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageView.swift; sourceTree = "<group>"; };
+		EC9A253D2B70F7D900F77D11 /* TMDBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				EC9A24F12B6D1C5500F77D11 /* TMDBAPI.swift */,
 				EC9A24EF2B6D1BF900F77D11 /* TMDBAPIManager.swift */,
 				EC9A25352B70C42D00F77D11 /* TMDBSessionManager.swift */,
+				EC9A253D2B70F7D900F77D11 /* TMDBError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				EC9A24F02B6D1BF900F77D11 /* TMDBAPIManager.swift in Sources */,
 				EC9A24E92B6D146E00F77D11 /* TrendingTableViewCell.swift in Sources */,
 				EC9A24DC2B6D0FCD00F77D11 /* HomeView.swift in Sources */,
+				EC9A253E2B70F7D900F77D11 /* TMDBError.swift in Sources */,
 				EC9A250C2B6FBB0900F77D11 /* OverviewTableViewCell.swift in Sources */,
 				EC9A24FC2B6E043900F77D11 /* TopAndPopularCollectionViewCell.swift in Sources */,
 				EC9A25012B6E113F00F77D11 /* HomeSection.swift in Sources */,
