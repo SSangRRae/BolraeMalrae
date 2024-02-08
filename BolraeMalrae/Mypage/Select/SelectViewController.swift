@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectViewController: UIViewController {
+final class SelectViewController: UIViewController {
     let selectView = SelectView()
     
     var list: [ImageModel] = []

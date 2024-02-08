@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditView: UIView {
+final class EditView: UIView {
     let tableView = UITableView(frame: .zero, style: .grouped)
     
     override init(frame: CGRect) {

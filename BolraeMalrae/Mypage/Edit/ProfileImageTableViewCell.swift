@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileImageTableViewCell: UITableViewCell {
+final class ProfileImageTableViewCell: UITableViewCell {
     let profileImage = UIImageView()
     let button: UIButton = {
         let view = UIButton()
@@ -27,7 +27,7 @@ class ProfileImageTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureHierarchy() {
+    private func configureHierarchy() {
         contentView.addSubview(profileImage)
         contentView.addSubview(button)
     }
@@ -41,7 +41,7 @@ class ProfileImageTableViewCell: UITableViewCell {
         profileImage.kf.setImage(with: url)
     }
     
-    func configureConstraints() {
+    private func configureConstraints() {
         profileImage.snp.makeConstraints { make in
             make.top.equalTo(contentView).offset(8)
             make.centerX.equalTo(contentView)

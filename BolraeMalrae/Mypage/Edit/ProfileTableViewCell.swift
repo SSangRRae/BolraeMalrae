@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileTableViewCell: UITableViewCell {
+final class ProfileTableViewCell: UITableViewCell {
     let titleLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black
@@ -30,7 +30,7 @@ class ProfileTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureHierarchy() {
+    private func configureHierarchy() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(inputTextField)
     }
@@ -40,7 +40,7 @@ class ProfileTableViewCell: UITableViewCell {
         inputTextField.placeholder = "\(title)를 입력해주세요"
     }
     
-    func configureConstraints() {
+    private func configureConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.leading.verticalEdges.equalTo(contentView).inset(16)
             make.height.equalTo(22)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopAndPopularCollectionViewCell: UICollectionViewCell {
+final class TopAndPopularCollectionViewCell: UICollectionViewCell {
     let posterImage = PosterImageView(frame: .zero)
     
     let title: UILabel = {
@@ -30,7 +30,7 @@ class TopAndPopularCollectionViewCell: UICollectionViewCell {
 }
 
 extension TopAndPopularCollectionViewCell {
-    func configureHierarchy() {
+    private func configureHierarchy() {
         contentView.addSubview(posterImage)
         contentView.addSubview(title)
     }
@@ -40,7 +40,7 @@ extension TopAndPopularCollectionViewCell {
         title.text = item.name
     }
 
-    func configureConstraints() {
+    private func configureConstraints() {
         posterImage.snp.makeConstraints { make in
             make.top.equalTo(contentView)
             make.horizontalEdges.equalTo(contentView)

@@ -8,14 +8,14 @@
 import UIKit
 import SnapKit
 
-class HeaderView: UIView {
-    let leftButton: UIButton = {
+final class HeaderView: UIView {
+    final let leftButton: UIButton = {
         let view = UIButton()
         view.setTitleColor(.systemGray, for: .normal)
         view.titleLabel?.font = .boldSystemFont(ofSize: 20)
         return view
     }()
-    let rightButton: UIButton = {
+    final let rightButton: UIButton = {
         let view = UIButton()
         view.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         view.tintColor = .systemGray
@@ -34,12 +34,12 @@ class HeaderView: UIView {
         fatalError("TendingHeaderView Required Init Error")
     }
     
-    func configureHierarchy() {
+    private func configureHierarchy() {
         addSubview(leftButton)
         addSubview(rightButton)
     }
     
-    func configureConstraints() {
+    private func configureConstraints() {
         leftButton.snp.makeConstraints { make in
             make.verticalEdges.equalTo(self)
             make.leading.equalTo(self).offset(16)

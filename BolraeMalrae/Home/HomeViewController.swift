@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-    let homeView = HomeView()
+final class HomeViewController: UIViewController {
+    final let homeView = HomeView()
     
     override func loadView() {
         self.view = homeView
@@ -100,7 +100,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 extension HomeViewController {
-    func requestToTMDB() {
+    private func requestToTMDB() {
         let group = DispatchGroup()
         
         group.enter()
@@ -141,7 +141,7 @@ extension HomeViewController {
             self.homeView.tableView.reloadData()
         }
     }
-    @objc func headerClicked(_ sender: UIButton) {
+    @objc private func headerClicked(_ sender: UIButton) {
         if sender.tag == 0 {
             print(sender.tag)
             let vc = TrendingViewController()

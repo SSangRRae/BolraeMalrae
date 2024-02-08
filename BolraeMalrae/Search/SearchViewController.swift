@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
     let searchBar: UISearchBar = {
         let view = UISearchBar()
         view.placeholder = "작품명을 검색해보세요"
@@ -60,19 +60,19 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
 }
 
 extension SearchViewController {
-    func configureHierarchy() {
+    private func configureHierarchy() {
         view.addSubview(searchBar)
         view.addSubview(collectionView)
     }
     
-    func configureViews() {
+    private func configureViews() {
         searchBar.delegate = self
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "Search")
     }
     
-    func configureConstraints() {
+    private func configureConstraints() {
         searchBar.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(44)
@@ -83,7 +83,7 @@ extension SearchViewController {
         }
     }
     
-    static func configureCollectionViewLayout() -> UICollectionViewLayout {
+    static private func configureCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         let space: CGFloat = 8
         let deviceWidth = UIScreen.main.bounds.width

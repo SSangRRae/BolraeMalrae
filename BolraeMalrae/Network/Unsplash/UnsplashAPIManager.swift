@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class UnsplashAPIManager {
+final class UnsplashAPIManager {
     static let shared = UnsplashAPIManager()
     private init() {}
     

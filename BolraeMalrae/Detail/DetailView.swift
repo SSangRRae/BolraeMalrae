@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailView: UIView {
+final class DetailView: UIView {
     let tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .grouped)
         view.backgroundColor = .clear        
@@ -28,11 +28,11 @@ class DetailView: UIView {
 }
 
 extension DetailView {
-    func configureHierarchy() {
+    private func configureHierarchy() {
         addSubview(tableView)
     }
 
-    func configureConstraints() {
+    private func configureConstraints() {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(safeAreaLayoutGuide)
         }

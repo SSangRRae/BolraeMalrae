@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageTableViewCell: UITableViewCell {
+final class ImageTableViewCell: UITableViewCell {
     let backdropImage: UIImageView = {
         let view = UIImageView()
         view.alpha = 0.3
@@ -41,7 +41,7 @@ class ImageTableViewCell: UITableViewCell {
 }
 
 extension ImageTableViewCell {
-    func configureHierarchy() {
+    private func configureHierarchy() {
         contentView.addSubview(backdropImage)
         contentView.addSubview(titleLabel)
         contentView.addSubview(originLabel)
@@ -62,7 +62,7 @@ extension ImageTableViewCell {
         originLabel.text = item.originalName
     }
 
-    func configureConstraints() {
+    private func configureConstraints() {
         backdropImage.snp.makeConstraints { make in
             make.height.equalTo(270)
             make.edges.equalTo(contentView)

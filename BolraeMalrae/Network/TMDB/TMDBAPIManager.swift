@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class TMDBAPIManager {
+final class TMDBAPIManager {
     static let shared = TMDBAPIManager()
     
     private init() { }

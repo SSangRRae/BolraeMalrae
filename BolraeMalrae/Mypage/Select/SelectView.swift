@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectView: UIView {
+final class SelectView: UIView {
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCollectionViewLayout())
     
     override init(frame: CGRect) {
@@ -23,7 +23,7 @@ class SelectView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    static func configureCollectionViewLayout() -> UICollectionViewLayout {
+    static private func configureCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         let space: CGFloat = 8
         let deviceWidth = UIScreen.main.bounds.width

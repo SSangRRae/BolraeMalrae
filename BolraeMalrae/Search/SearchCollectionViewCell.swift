@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchCollectionViewCell: UICollectionViewCell {
+final class SearchCollectionViewCell: UICollectionViewCell {
     let posterImage = PosterImageView(frame: .zero)
     
     override init(frame: CGRect) {

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class TrendingTableViewCell: UITableViewCell {
+final class TrendingTableViewCell: UITableViewCell {
     let rankLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black
@@ -38,7 +38,7 @@ class TrendingTableViewCell: UITableViewCell {
 }
 
 extension TrendingTableViewCell {
-    func configureHierarchy() {
+    private func configureHierarchy() {
         contentView.addSubview(rankLabel)
         contentView.addSubview(posterImage)
         contentView.addSubview(title)
@@ -50,7 +50,7 @@ extension TrendingTableViewCell {
         title.text = item.name
     }
     
-    func configureConstraints() {
+    private func configureConstraints() {
         rankLabel.snp.makeConstraints { make in
             make.centerY.equalTo(contentView)
             make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(16)

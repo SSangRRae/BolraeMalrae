@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OverviewTableViewCell: UITableViewCell {
+final class OverviewTableViewCell: UITableViewCell {
     let textView: UILabel = {
         let view = UILabel()
         view.numberOfLines = 0
@@ -26,11 +26,11 @@ class OverviewTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureHierarchy() {
+    private func configureHierarchy() {
         contentView.addSubview(textView)
     }
     
-    func configureConstraints() {
+    private func configureConstraints() {
         textView.snp.makeConstraints { make in
             make.edges.equalTo(contentView).inset(24)
         }

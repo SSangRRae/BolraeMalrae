@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MypageViewController: UIViewController {
+final class MypageViewController: UIViewController {
     let mypageView = MypageView()
     
     override func loadView() {
@@ -20,7 +20,7 @@ class MypageViewController: UIViewController {
         mypageView.editButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
     }
     
-    @objc func editButtonClicked() {
+    @objc private func editButtonClicked() {
         let vc = EditViewController()
         vc.space = { profileImage, nickname in
             if profileImage == "person" {

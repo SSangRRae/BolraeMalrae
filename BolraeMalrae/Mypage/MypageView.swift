@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MypageView: UIView {
+final class MypageView: UIView {
     let profileImage = UIImageView()
     let nicknameLabel: UILabel = {
         let view = UILabel()
@@ -37,13 +37,13 @@ class MypageView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureHierarchy() {
+    private func configureHierarchy() {
         addSubview(profileImage)
         addSubview(nicknameLabel)
         addSubview(editButton)
     }
     
-    func configureView() {
+    private func configureView() {
         profileImage.image = UIImage(systemName: "person")
         profileImage.clipsToBounds = true
         DispatchQueue.main.async {
@@ -51,7 +51,7 @@ class MypageView: UIView {
         }
     }
     
-    func configureConstraints() {
+    private func configureConstraints() {
         profileImage.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(8)
             make.centerX.equalTo(self)

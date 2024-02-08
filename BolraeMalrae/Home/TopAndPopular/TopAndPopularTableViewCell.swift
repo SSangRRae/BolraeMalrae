@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopAndPopularTableViewCell: UITableViewCell {
+final class TopAndPopularTableViewCell: UITableViewCell {
     let collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: configureCollectionViewLayout())
         return view
@@ -30,7 +30,7 @@ class TopAndPopularTableViewCell: UITableViewCell {
 }
 
 extension TopAndPopularTableViewCell {
-    static func configureCollectionViewLayout() -> UICollectionViewLayout {
+    static private func configureCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         
         layout.itemSize = CGSize(width: 150, height: 220)

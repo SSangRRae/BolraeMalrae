@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
     let detailView = DetailView()
     var tvShow: TV = TV(id: 0, name: "", overview: "", originalName: "", backdrop: "", poster: "")
     

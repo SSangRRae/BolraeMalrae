@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TMDBSessionManager {
+final class TMDBSessionManager {
     static let shared = TMDBSessionManager()
     
     func fetchTrendingTVShows(api: TMDBAPI, completionHandler: @escaping (TVModel?, TMDBError?) -> Void) {

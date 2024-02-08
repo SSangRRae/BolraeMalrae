@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class TrendingViewController: UIViewController {
+final class TrendingViewController: UIViewController {
     let titleLabel: UILabel = {
         let view = UILabel()
         view.text = "이번주 트렌딩 순위"
@@ -53,19 +53,19 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension TrendingViewController {
-    func configureHierarchy() {
+    private func configureHierarchy() {
         view.addSubview(titleLabel)
         view.addSubview(tableView)
     }
     
-    func configureViews() {
+    private func configureViews() {
         view.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TrendingTableViewCell.self, forCellReuseIdentifier: "Trending")
     }
     
-    func configureConstraints() {
+    private func configureConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.top.leading.equalTo(view.safeAreaLayoutGuide).offset(8)
             make.height.equalTo(22)

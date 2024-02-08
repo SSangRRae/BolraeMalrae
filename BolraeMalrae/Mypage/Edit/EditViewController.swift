@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditViewController: UIViewController {
+final class EditViewController: UIViewController {
     let editView = EditView()
     
     var nickname: String = ""
@@ -32,17 +32,17 @@ class EditViewController: UIViewController {
 }
 
 extension EditViewController {
-    func designNavigation() {
+    private func designNavigation() {
         navigationItem.title = "프로필 편집"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(cancelButtonClicked))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(completeButtonClicked))
     }
     
-    @objc func cancelButtonClicked() {
+    @objc private func cancelButtonClicked() {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func completeButtonClicked() {
+    @objc private func completeButtonClicked() {
         if let image = imageURL {
             space?(image, nickname)
         } else {
@@ -51,7 +51,7 @@ extension EditViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func profileImageEditButtonClicked() {
+    @objc private func profileImageEditButtonClicked() {
         let vc = SelectViewController()
         vc.space = { url in
             self.imageURL = url

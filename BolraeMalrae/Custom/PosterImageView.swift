@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PosterImageView: UIImageView {
+final class PosterImageView: UIImageView {
     let posterImage: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleToFill

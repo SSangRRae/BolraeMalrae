@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CastTableViewCell: UITableViewCell {
+final class CastTableViewCell: UITableViewCell {
     let profileImage = PosterImageView(frame: .zero)
     let nameLabel: UILabel = {
         let view = UILabel()
@@ -32,7 +32,7 @@ class CastTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureHierarchy() {
+    private func configureHierarchy() {
         contentView.addSubview(profileImage)
         contentView.addSubview(nameLabel)
         contentView.addSubview(roleLabel)
@@ -44,7 +44,7 @@ class CastTableViewCell: UITableViewCell {
         roleLabel.text = item.roles[0].character
     }
     
-    func configureConstraints() {
+    private func configureConstraints() {
         profileImage.snp.makeConstraints { make in
             make.leading.equalTo(contentView).offset(16)
             make.width.equalTo(50)

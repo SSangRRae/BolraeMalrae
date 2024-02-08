@@ -8,14 +8,14 @@
 import UIKit
 import SnapKit
 
-class HomeView: UIView {
-    let logoImageView: UIImageView = {
+final class HomeView: UIView {
+    final let logoImageView: UIImageView = {
         let view = UIImageView()
         view.image = .logo
         view.contentMode = .scaleToFill
         return view
     }()
-    let tableView: UITableView = {
+    final let tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .grouped)
         view.backgroundColor = .clear
         return view
@@ -24,8 +24,8 @@ class HomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        backgroundColor = .systemBackground
         configureHierarchy()
-        configureView()
         configureConstraints()
     }
     
@@ -33,16 +33,12 @@ class HomeView: UIView {
         fatalError("HomeView Required Init Error")
     }
     
-    func configureHierarchy() {
+    private func configureHierarchy() {
         addSubview(logoImageView)
         addSubview(tableView)
     }
     
-    func configureView() {
-        backgroundColor = .systemBackground
-    }
-    
-    func configureConstraints() {
+    private func configureConstraints() {
         logoImageView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).inset(8)
             make.centerX.equalTo(safeAreaLayoutGuide)
