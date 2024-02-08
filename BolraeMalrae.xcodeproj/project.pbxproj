@@ -41,6 +41,12 @@
 		EC9A253A2B70EF9500F77D11 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A25392B70EF9500F77D11 /* ImageTableViewCell.swift */; };
 		EC9A253C2B70F3C600F77D11 /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A253B2B70F3C600F77D11 /* PosterImageView.swift */; };
 		EC9A253E2B70F7D900F77D11 /* TMDBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A253D2B70F7D900F77D11 /* TMDBError.swift */; };
+		ECCA1A512B74AF7000EB4BD1 /* MypageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA1A502B74AF7000EB4BD1 /* MypageView.swift */; };
+		ECCA1A542B74B48300EB4BD1 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA1A532B74B48300EB4BD1 /* EditViewController.swift */; };
+		ECCA1A562B74B92B00EB4BD1 /* ProfileImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA1A552B74B92B00EB4BD1 /* ProfileImageTableViewCell.swift */; };
+		ECCA1A582B74BA4700EB4BD1 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA1A572B74BA4700EB4BD1 /* EditView.swift */; };
+		ECCA1A5A2B74BDEC00EB4BD1 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA1A592B74BDEC00EB4BD1 /* ProfileTableViewCell.swift */; };
+		ECCA1A5D2B74C0BE00EB4BD1 /* EditSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA1A5C2B74C0BE00EB4BD1 /* EditSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +82,12 @@
 		EC9A25392B70EF9500F77D11 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		EC9A253B2B70F3C600F77D11 /* PosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageView.swift; sourceTree = "<group>"; };
 		EC9A253D2B70F7D900F77D11 /* TMDBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBError.swift; sourceTree = "<group>"; };
+		ECCA1A502B74AF7000EB4BD1 /* MypageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageView.swift; sourceTree = "<group>"; };
+		ECCA1A532B74B48300EB4BD1 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		ECCA1A552B74B92B00EB4BD1 /* ProfileImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageTableViewCell.swift; sourceTree = "<group>"; };
+		ECCA1A572B74BA4700EB4BD1 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		ECCA1A592B74BDEC00EB4BD1 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		ECCA1A5C2B74C0BE00EB4BD1 /* EditSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +166,9 @@
 		EC9A24D42B6D0C6C00F77D11 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
+				ECCA1A502B74AF7000EB4BD1 /* MypageView.swift */,
 				EC9A24D92B6D0CDF00F77D11 /* MypageViewController.swift */,
+				ECCA1A522B74B46A00EB4BD1 /* Edit */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -209,6 +223,18 @@
 				EC9A25112B6FC14500F77D11 /* CastTableViewCell.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		ECCA1A522B74B46A00EB4BD1 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				ECCA1A5C2B74C0BE00EB4BD1 /* EditSection.swift */,
+				ECCA1A572B74BA4700EB4BD1 /* EditView.swift */,
+				ECCA1A532B74B48300EB4BD1 /* EditViewController.swift */,
+				ECCA1A552B74B92B00EB4BD1 /* ProfileImageTableViewCell.swift */,
+				ECCA1A592B74BDEC00EB4BD1 /* ProfileTableViewCell.swift */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,8 +326,12 @@
 				EC9A25032B6FA5A400F77D11 /* TrendingViewController.swift in Sources */,
 				EC9A24DA2B6D0CDF00F77D11 /* MypageViewController.swift in Sources */,
 				EC9A24BF2B6D0B4C00F77D11 /* AppDelegate.swift in Sources */,
+				ECCA1A5D2B74C0BE00EB4BD1 /* EditSection.swift in Sources */,
 				EC9A253A2B70EF9500F77D11 /* ImageTableViewCell.swift in Sources */,
 				EC9A25122B6FC14500F77D11 /* CastTableViewCell.swift in Sources */,
+				ECCA1A5A2B74BDEC00EB4BD1 /* ProfileTableViewCell.swift in Sources */,
+				ECCA1A562B74B92B00EB4BD1 /* ProfileImageTableViewCell.swift in Sources */,
+				ECCA1A512B74AF7000EB4BD1 /* MypageView.swift in Sources */,
 				EC9A250E2B6FBBF000F77D11 /* DetailSection.swift in Sources */,
 				EC9A24EE2B6D1BAB00F77D11 /* APIKey.swift in Sources */,
 				EC9A25102B6FC03900F77D11 /* CastModel.swift in Sources */,
@@ -312,9 +342,11 @@
 				EC9A25382B70EADE00F77D11 /* SearchCollectionViewCell.swift in Sources */,
 				EC9A24F02B6D1BF900F77D11 /* TMDBAPIManager.swift in Sources */,
 				EC9A24E92B6D146E00F77D11 /* TrendingTableViewCell.swift in Sources */,
+				ECCA1A582B74BA4700EB4BD1 /* EditView.swift in Sources */,
 				EC9A24DC2B6D0FCD00F77D11 /* HomeView.swift in Sources */,
 				EC9A253E2B70F7D900F77D11 /* TMDBError.swift in Sources */,
 				EC9A250C2B6FBB0900F77D11 /* OverviewTableViewCell.swift in Sources */,
+				ECCA1A542B74B48300EB4BD1 /* EditViewController.swift in Sources */,
 				EC9A24FC2B6E043900F77D11 /* TopAndPopularCollectionViewCell.swift in Sources */,
 				EC9A25012B6E113F00F77D11 /* HomeSection.swift in Sources */,
 				EC9A24D82B6D0CAF00F77D11 /* SearchViewController.swift in Sources */,
