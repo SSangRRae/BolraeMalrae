@@ -47,6 +47,10 @@
 		ECCA1A582B74BA4700EB4BD1 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA1A572B74BA4700EB4BD1 /* EditView.swift */; };
 		ECCA1A5A2B74BDEC00EB4BD1 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA1A592B74BDEC00EB4BD1 /* ProfileTableViewCell.swift */; };
 		ECCA1A5D2B74C0BE00EB4BD1 /* EditSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA1A5C2B74C0BE00EB4BD1 /* EditSection.swift */; };
+		ECCA1A622B74CE8A00EB4BD1 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA1A612B74CE8A00EB4BD1 /* ImageModel.swift */; };
+		ECCA1A662B74D01F00EB4BD1 /* UnsplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA1A652B74D01F00EB4BD1 /* UnsplashAPIManager.swift */; };
+		ECCA1A692B751F2800EB4BD1 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA1A682B751F2800EB4BD1 /* SelectViewController.swift */; };
+		ECCA1A6B2B751FC800EB4BD1 /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA1A6A2B751FC800EB4BD1 /* SelectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +92,10 @@
 		ECCA1A572B74BA4700EB4BD1 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		ECCA1A592B74BDEC00EB4BD1 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		ECCA1A5C2B74C0BE00EB4BD1 /* EditSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSection.swift; sourceTree = "<group>"; };
+		ECCA1A612B74CE8A00EB4BD1 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		ECCA1A652B74D01F00EB4BD1 /* UnsplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIManager.swift; sourceTree = "<group>"; };
+		ECCA1A682B751F2800EB4BD1 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		ECCA1A6A2B751FC800EB4BD1 /* SelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +177,7 @@
 				ECCA1A502B74AF7000EB4BD1 /* MypageView.swift */,
 				EC9A24D92B6D0CDF00F77D11 /* MypageViewController.swift */,
 				ECCA1A522B74B46A00EB4BD1 /* Edit */,
+				ECCA1A672B751F0E00EB4BD1 /* Select */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -176,12 +185,8 @@
 		EC9A24EA2B6D1B7A00F77D11 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				EC9A24F32B6D1DD400F77D11 /* TVModel.swift */,
-				EC9A250F2B6FC03900F77D11 /* CastModel.swift */,
-				EC9A24F12B6D1C5500F77D11 /* TMDBAPI.swift */,
-				EC9A24EF2B6D1BF900F77D11 /* TMDBAPIManager.swift */,
-				EC9A25352B70C42D00F77D11 /* TMDBSessionManager.swift */,
-				EC9A253D2B70F7D900F77D11 /* TMDBError.swift */,
+				ECCA1A642B74CFED00EB4BD1 /* Unsplash */,
+				ECCA1A632B74CFDC00EB4BD1 /* TMDB */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -235,6 +240,37 @@
 				ECCA1A592B74BDEC00EB4BD1 /* ProfileTableViewCell.swift */,
 			);
 			path = Edit;
+			sourceTree = "<group>";
+		};
+		ECCA1A632B74CFDC00EB4BD1 /* TMDB */ = {
+			isa = PBXGroup;
+			children = (
+				EC9A24F32B6D1DD400F77D11 /* TVModel.swift */,
+				EC9A250F2B6FC03900F77D11 /* CastModel.swift */,
+				EC9A24F12B6D1C5500F77D11 /* TMDBAPI.swift */,
+				EC9A24EF2B6D1BF900F77D11 /* TMDBAPIManager.swift */,
+				EC9A25352B70C42D00F77D11 /* TMDBSessionManager.swift */,
+				EC9A253D2B70F7D900F77D11 /* TMDBError.swift */,
+			);
+			path = TMDB;
+			sourceTree = "<group>";
+		};
+		ECCA1A642B74CFED00EB4BD1 /* Unsplash */ = {
+			isa = PBXGroup;
+			children = (
+				ECCA1A612B74CE8A00EB4BD1 /* ImageModel.swift */,
+				ECCA1A652B74D01F00EB4BD1 /* UnsplashAPIManager.swift */,
+			);
+			path = Unsplash;
+			sourceTree = "<group>";
+		};
+		ECCA1A672B751F0E00EB4BD1 /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				ECCA1A682B751F2800EB4BD1 /* SelectViewController.swift */,
+				ECCA1A6A2B751FC800EB4BD1 /* SelectView.swift */,
+			);
+			path = Select;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +371,7 @@
 				EC9A250E2B6FBBF000F77D11 /* DetailSection.swift in Sources */,
 				EC9A24EE2B6D1BAB00F77D11 /* APIKey.swift in Sources */,
 				EC9A25102B6FC03900F77D11 /* CastModel.swift in Sources */,
+				ECCA1A692B751F2800EB4BD1 /* SelectViewController.swift in Sources */,
 				EC9A24F42B6D1DD400F77D11 /* TVModel.swift in Sources */,
 				EC9A253C2B70F3C600F77D11 /* PosterImageView.swift in Sources */,
 				EC9A24F22B6D1C5500F77D11 /* TMDBAPI.swift in Sources */,
@@ -346,8 +383,11 @@
 				EC9A24DC2B6D0FCD00F77D11 /* HomeView.swift in Sources */,
 				EC9A253E2B70F7D900F77D11 /* TMDBError.swift in Sources */,
 				EC9A250C2B6FBB0900F77D11 /* OverviewTableViewCell.swift in Sources */,
+				ECCA1A622B74CE8A00EB4BD1 /* ImageModel.swift in Sources */,
 				ECCA1A542B74B48300EB4BD1 /* EditViewController.swift in Sources */,
 				EC9A24FC2B6E043900F77D11 /* TopAndPopularCollectionViewCell.swift in Sources */,
+				ECCA1A6B2B751FC800EB4BD1 /* SelectView.swift in Sources */,
+				ECCA1A662B74D01F00EB4BD1 /* UnsplashAPIManager.swift in Sources */,
 				EC9A25012B6E113F00F77D11 /* HomeSection.swift in Sources */,
 				EC9A24D82B6D0CAF00F77D11 /* SearchViewController.swift in Sources */,
 				EC9A24F62B6D25BC00F77D11 /* HeaderView.swift in Sources */,

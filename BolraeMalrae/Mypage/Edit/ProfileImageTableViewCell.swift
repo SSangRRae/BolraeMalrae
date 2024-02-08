@@ -20,7 +20,6 @@ class ProfileImageTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         configureHierarchy()
-        configureViews()
         configureConstraints()
     }
     
@@ -33,8 +32,13 @@ class ProfileImageTableViewCell: UITableViewCell {
         contentView.addSubview(button)
     }
     
-    func configureViews() {
-        profileImage.backgroundColor = .gray
+    func configureViews(urlString: String?) {
+        guard let urlString else {
+            profileImage.image = UIImage(systemName: "person")
+            return
+        }
+        let url = URL(string: urlString)
+        profileImage.kf.setImage(with: url)
     }
     
     func configureConstraints() {

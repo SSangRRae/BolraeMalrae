@@ -25,4 +25,9 @@ class SearchCollectionViewCell: UICollectionViewCell {
     func configureView(item: TV) {
         posterImage.configureImage(poster: item.poster)
     }
+    
+    func configureView(url: String) {
+        let url = URL(string: url)
+        posterImage.kf.setImage(with: url)
+    }
 }

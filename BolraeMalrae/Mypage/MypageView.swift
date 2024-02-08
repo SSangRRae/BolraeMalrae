@@ -44,8 +44,8 @@ class MypageView: UIView {
     }
     
     func configureView() {
+        profileImage.image = UIImage(systemName: "person")
         profileImage.clipsToBounds = true
-        profileImage.backgroundColor = .gray
         DispatchQueue.main.async {
             self.profileImage.layer.cornerRadius = self.profileImage.frame.width / 2
         }
